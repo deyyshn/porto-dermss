@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dermawati Siahaan Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Derma</div>
+    <ul class="nav-links">
+      <li onclick="navigateTo('home')">Home</li>
+      <li onclick="navigateTo('about')">About</li>
+      <li onclick="navigateTo('journey')">Journey</li>
+      <li onclick="navigateTo('skills')">Skills</li>
+      <li onclick="navigateTo('contact')">Contact Me</li>
+    </ul>
+  </nav>
+
+  <!-- Page 1: Home -->
+  <div id="home" class="page">
+    <h1 class="tagline">STEP INTO THE FUTURE AND ENJOY THE JOURNEY</h1>
+    <h2 class="animated-text">Hi, Welcome!</h2>
+    <button class="open-btn" onclick="navigateTo('about')">Open</button>
+  </div>
+
+  <!-- Page 2: About -->
+  <div id="about" class="page hidden">
+    <div class="about-container">
+      <img src="gambarde.jpg.jpg" alt="Dermawati Siahaan" class="profile-pic" />
+      <p class="about-text">
+        Hi, my name is Dermawati Siahaan. I was born and raised in Batam, and I’m currently 18 years old.
+        I love improving myself and exploring new things — like building this website. I created this space
+        to share, learn, and grow — and maybe inspire others along the way. Well, that’s a brief intro about me.
+        Feel free to explore and enjoy this website! ♡
+      </p>
+    </div>
+  </div>
+
+  <!-- Page 3: Journey -->
+  <div id="journey" class="page hidden">
+    <div class="journey-gallery">
+      <img src="de4.jpg" alt="Foto 1" class="journey-img">
+      <img src="de3.jpg" alt="Foto 2" class="journey-img">
+      <img src="de2.jpg" alt="Foto 3" class="journey-img">
+      <img src="de.jpg" alt="Foto 4" class="journey-img">
+    </div>
+    <div class="journey-text">
+      <p>I completed my elementary education at SDS Teramia Batam, then attended SMPN 20 Batam, and chose to continue my studies at SMAN 1 Batam. From a young age, I’ve been very active in participating in various activities. I enjoy exploring new things and often find myself facing unsolved problems. Although they seem complicated, I enjoy solving problems by discussing and exchanging ideas with my friends. This is what has helped me get through many challenges, obstacles, and even unexpected situations.</p>
+      <p>I am also someone who is emotional, and I tend to make decisions based on feelings in certain situations. However, I can think critically when I want to understand something that has a cause-and-effect relationship, or even something whose cause is yet to be discovered.</p>
+      <p>I was not born into a wealthy family, which means I had to struggle not only for my education but also to think about the financial aspect. After 9 years of formal education, I am now about to enter university. The tough life and many lessons I've learned along the way have prepared me mentally to step into the world of higher education and the workforce.</p>
+      <p>In addition, I live by the principle "As long as I can, why not?" This mindset has pushed me to try learning anything I believe I can, like programming, even though I never thought I’d venture into the IT world or pursue such a major. Given that I took a science track in high school, this has been quite challenging for me. Especially since I have to start from scratch. Hopefully, everything I’m doing now will not be in vain, but will become a strength for me in the future.</p>
+    </div>
+  </div>
+
+  <!-- Page 4: Skills -->
+  <div id="skills" class="page hidden">
+    <div class="skills-grid">
+      <div class="skill-card"><img src="excel.png" alt="Excel"><p>Microsoft Excel</p></div>
+      <div class="skill-card"><img src="wordd.png" alt="Word"><p>Microsoft Word</p></div>
+      <div class="skill-card"><img src="canva.png" alt="Canva"><p>Canva</p></div>
+      <div class="skill-card"><img src="capcut.png" alt="CapCut"><p>CapCut</p></div>
+      <div class="skill-card"><img src="vscode.png" alt="VS Code"><p>Visual Studio Code</p></div>
+    </div>
+  </div>
+
+  <!-- Page 5: Contact Me -->
+  <div id="contact" class="page hidden">
+    <div class="contact-icons">
+      <a href="https://instagram.com/deyyshn"><img src="ig.png" alt="Instagram"></a>
+      <a href="mailto:deaasiahaan@gmail.com"><img src="gmail.png" alt="Gmail"></a>
+    </div>
+    <div class="rating-section">
+      <p>Thanks for visiting, give me a rating based on your perspective!</p>
+      <div class="stars">
+        <span onclick="rate(1)">&#9733;</span>
+        <span onclick="rate(2)">&#9733;</span>
+        <span onclick="rate(3)">&#9733;</span>
+        <span onclick="rate(4)">&#9733;</span>
+        <span onclick="rate(5)">&#9733;</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.add('hidden');
+      });
+      const target = document.getElementById(pageId);
+      target.classList.remove('hidden');
+      target.classList.add('fade-in');
+      setTimeout(() => target.classList.remove('fade-in'), 500);
+    }
+
+    function rate(starCount) {
+      alert(`Thanks for rating this website ${starCount} star(s)!`);
+    }
+  </script>
+</body>
+</html>
